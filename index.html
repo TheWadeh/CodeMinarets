@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Video Background</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+        height: 100vh;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+      }
+
+      video#video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      #text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+      }
+
+      header {
+        background-color: rgba(0, 0, 0, 0.34);
+        height: 10vh;
+        padding: 0.3em 0;
+        text-align: center;
+        color: white;
+        width: 100vw;
+        text-align: center;
+        z-index: 1;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        transform: translateY(0.6em);
+      }
+
+      nav ul {
+        list-style: none;
+        transform: translateY(1em);
+        margin: 0;
+        padding: 0;
+      }
+
+      nav li {
+        display: inline-block;
+        margin-right: 20px;
+        transform: translate(0, -10px);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: rgb(58, 111, 236);
+      }
+      .beautiful-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #fff;
+        background-color: #494f52;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .beautiful-button:hover {
+        background-color: rgb(77, 77, 228);
+        font-weight: 900;
+        color: white;
+      }
+      .img {
+        width: 60px;
+        height: 50px;
+        border-radius: 50%;
+        transform: translateY(-12px);
+        color: white;
+      }
+      .span {
+        transform: translate(-14px, -1px);
+      }
+      #tg {
+        width: 30px;
+        height: 30px;
+        transform: translate(0px, 9px);
+      }
+      p {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .container {
+        display:flex;
+        /* gap:8rem; */
+        justify-content: space-around;
+      }
+      .container-left {
+        display:flex;
+        flex-direction: column;
+        transform:translate(-8em, 1em);
+        line-height:1.3;
+      }
+      .tg-join {
+        border-radius:.8rem;
+      }
+      .tg-join:hover {
+        transform:scale(1.01)
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img class="img" src="code.png" alt="" />
+        <!-- <span>CodeMinarets</span> -->
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li>
+            <a href="https://t.me/CodeMinarets"><img src="telegram.png" alt="" id="tg" /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <video autoplay muted loop id="video-bg">
+        <source src="1105173439-preview.mp4" type="video/mp4" />
+      </video>
+      <div id="text-overlay">
+        <div class="container">
+          <div class="container-left">
+            <h1>CodeMinarets</h1>
+            <p>" Building a bright future, One tech step at a time..."</p>
+            <button class="beautiful-button">Join Us</button>
+          </div>
+          <div class="container-right">
+            <a href="https://t.me/CodeMinarets"><img class="tg-join" src="photo_2024-02-02_15-34-34.jpg" alt="" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
